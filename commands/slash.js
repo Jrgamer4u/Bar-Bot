@@ -1,5 +1,6 @@
 const { SlashCommandBuilder } = require('@discordjs/builders');
 const wait = require('node:timers/promises').setTimeout;
+const { MessageAttachment } = require('discord.js');
 const file = new MessageAttachment('files/moai.gif');
 
 module.exports = {

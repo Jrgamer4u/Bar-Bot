@@ -1,4 +1,5 @@
 const { SlashCommandBuilder } = require('@discordjs/builders');
+const { MessageAttachment } = require('discord.js');
 const file = new MessageAttachment('files/faker-ib.png');
 
 module.exports = {
