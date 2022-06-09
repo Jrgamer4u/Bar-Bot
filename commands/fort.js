@@ -8,6 +8,6 @@ module.exports = {
 		.setDescription('forts you'),
 	async execute(interaction) {
 		await interaction.reply("**forts in a ~~18+~~ 20+ way**");
-		return interaction.reply({ content: '…', files: [file] });
+		await interaction.followUp({ content: '…', files: [file] });
 	},
 };
