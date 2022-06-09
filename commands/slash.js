@@ -8,7 +8,7 @@ module.exports = {
 		.setName('shash')
 		.setDescription('look guys here’s the funny guy. HERE’S THE FUNNY GUY'),
 	async execute(interaction) {
-		await interaction.reply('...');
+		await interaction.reply('…');
 		await wait(1000);
 		await interaction.followUp({ content: 'die <:shot:858854281292283914>', files: [file] });
 	},

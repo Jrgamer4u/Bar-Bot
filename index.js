@@ -12,7 +12,7 @@ for (const file of commandFiles) {
 }
 
 client.on('ready', async () => {
-	client.channels.cache.get(process.env.connected).send(String('yo im onlin'));
+	client.channels.cache.get(process.env.connected).send('yo im onlin');
 	client.user.setActivity('BarBot 4 | Slash Commands!', { type: 'PLAYING' });
 });
 
