@@ -16,5 +16,14 @@ module.exports = {
 		const firstActionRow = new MessageActionRow().addComponents(Input);
 		modal.addComponents(firstActionRow);
 		await interaction.showModal(modal);
+
+		client.on('interactionCreate', interaction => {
+			if (!interaction.isModalSubmit()) return;
+			const input = interaction.fields.getTextInputValue('Input');
+			const type = interaction.customId
+			db.set(input, type);
+		});
+
+		await modalSubmit.reply('thank you.');
 	},
 };
