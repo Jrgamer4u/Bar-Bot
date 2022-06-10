@@ -47,8 +47,7 @@ client.on('interactionCreate', async interaction => {
 client.on('interactionCreate', interaction => {
 	if (!interaction.isModalSubmit()) return;
 	const input = interaction.fields.getTextInputValue('Input');
-	const type = interaction.fields.customId
-	console.log({ type, input });
+	const type = interaction.customId;
 	db.set(input, type);
 });
 
