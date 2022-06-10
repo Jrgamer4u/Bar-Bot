@@ -1,11 +1,11 @@
 const { SlashCommandBuilder } = require('@discordjs/builders');
 const { MessageActionRow, MessageSelectMenu, MessageAttachment } = require('discord.js');
-const file = new MessageAttachment('files/undertale_text_box.jif');
+const file = new MessageAttachment('files/undertale_text_box.gif');
 
 module.exports = {
 	data: new SlashCommandBuilder()
-		.setName('story-of-ass')
-		.setDescription('Tells you Le Epic Story of Ass'),
+		.setName('textbox')
+		.setDescription('Tells you  textbox'),
 	async execute(interaction) {
 		const row = new MessageActionRow()
 			.addComponents(
