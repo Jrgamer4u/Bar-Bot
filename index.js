@@ -2,6 +2,9 @@ const keepAlive = require("./server.js");
 const { readdirSync } = require('fs');
 const { Client, Collection, Intents } = require('discord.js');
 const client = new Client({ intents: [Intents.FLAGS.GUILDS] });
+const Database = require("easy-json-database");
+const devMode = typeof __E_IS_DEV !== "undefined" && __E_IS_DEV;
+const db = new Database(`${devMode ? S4D_NATIVE_GET_PATH : "."}/database/db.json`)
 
 client.commands = new Collection();
 const commandFiles = readdirSync('./commands').filter(file => file.endsWith('.js'));
@@ -39,6 +42,14 @@ client.on('interactionCreate', async interaction => {
 	if (interaction.customId === 'select') {
 		await interaction.update({ content: interaction.values[0], components: [] });
 	}
+});
+
+client.on('interactionCreate', interaction => {
+	if (!interaction.isModalSubmit()) return;
+	const input = interaction.fields.getTextInputValue('Input');
+	const type = interaction.fields.customId
+	console.log({ type, input });
+	db.set(input, type);
 });
 
 client.login(process.env.token);
