@@ -3,7 +3,7 @@ const { MessageEmbed } = require('discord.js');
 
 module.exports = {
 	data: new SlashCommandBuilder()
-		.setName('jter-impression')
+		.setName('ass-impression')
 		.setDescription('real'),
 	async execute(interaction) {
 		const embed = new MessageEmbed()
