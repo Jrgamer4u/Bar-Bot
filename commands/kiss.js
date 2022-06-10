@@ -1,5 +1,4 @@
 const { SlashCommandBuilder } = require('@discordjs/builders');
-const user = interaction.options.getUser('target');
 
 module.exports = {
 	data: new SlashCommandBuilder()
@@ -10,6 +9,7 @@ module.exports = {
 				.setDescription('whom')
 				.setRequired(true)),
 	async execute(interaction) {
+		const user = interaction.options.getUser('target');
 		return interaction.reply('<@user id> kissed ' + interaction.options.getString('input') + '! Wow, they sure are a cute couple..');
 	},
 };

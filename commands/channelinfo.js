@@ -3,7 +3,7 @@ const { MessageEmbed } = require('discord.js');
 
 module.exports = {
 	data: new SlashCommandBuilder()
-		.setName('premhelp')
+		.setName('channelinfo')
 		.setDescription('help get premium'),
 	async execute(interaction) {
 		const embed = new MessageEmbed()
