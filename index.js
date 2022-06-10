@@ -58,4 +58,12 @@ client.on('interactionCreate', async interaction => {
 	}
 });
 
+client.on('interactionCreate', async interaction => {
+	if (!interaction.isSelectMenu()) return;
+
+	if (interaction.customId === 'select') {
+		await interaction.update({ content: interaction.values[0], components: [] });
+	}
+});
+
 client.login(process.env.token);
