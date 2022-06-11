@@ -9,7 +9,6 @@ module.exports = {
 				.setDescription('whom')
 				.setRequired(true)),
 	async execute(interaction) {
-		const user = interaction.options.getUser('target');
-		return interaction.reply('<@user id> kissed ' + interaction.options.getString('input') + '! Wow, they sure are a cute couple…');
+		return interaction.reply('<@' + interaction.user.id + '> kissed ' + interaction.options.getString('input') + '! Wow, they sure are a cute couple…');
 	},
 };

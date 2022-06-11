@@ -9,7 +9,6 @@ module.exports = {
 				.setDescription('whom')
 				.setRequired(true)),
 	async execute(interaction) {
-		const user = interaction.options.getUser('target');
-		return interaction.reply('<@user id> is fucking ' + interaction.options.getString('input') + '! i should probably leave…');
+		return interaction.reply('<@' + interaction.user.id + '> is fucking ' + interaction.options.getString('input') + '! i should probably leave…');
 	},
 };
