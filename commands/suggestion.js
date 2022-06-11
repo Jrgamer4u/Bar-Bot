@@ -4,7 +4,7 @@ const { MessageActionRow, Modal, TextInputComponent } = require('discord.js');
 module.exports = {
 	data: new SlashCommandBuilder()
 		.setName('suggestion')
-		.setDescription('give us suggestions'),
+		.setDescription('PROBLEMATIC: give us suggestions'),
 	async execute(interaction) {
 		const modal = new Modal()
 			.setCustomId('suggestions')
