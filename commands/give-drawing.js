@@ -11,10 +11,10 @@ module.exports = {
 				.setRequired(true)),
 	async execute(interaction) {
 		const user = interaction.options.getUser('target');
-		await interaction.reply('yo ' + interaction.options.getString('input'));
+		await interaction.reply(`yo ${interaction.options.getString('input')}`);
 		await wait(2000);
-		await interaction.followUp('@' + interaction.options.getString('input') + ' >:(');
+		await interaction.followUp(`@${interaction.options.getString('input')} >:(`);
 		await wait(2000);
-		await interaction.followUp('anyways\n**gives ' + interaction.options.getString('input') + ' a drawing** :]');
+		await interaction.followUp(`anyways\n**gives ${interaction.options.getString('input')} a drawing** :]`);
 	},
 };

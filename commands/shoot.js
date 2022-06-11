@@ -14,6 +14,6 @@ module.exports = {
 				.setRequired(true)),
 	async execute(interaction) {
 		const user = interaction.options.getUser('target');
-		return interaction.reply('**shoots ' + interaction.options.getString('input') + ' ' + interaction.options.getString('amount') + ' times** <:shot:858854281292283914>');
+		return interaction.reply(`**shoots ${interaction.options.getString('input')} ${interaction.options.getString('amount')} times** <:shot:858854281292283914>`);
 	},
 };

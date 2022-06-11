@@ -9,6 +9,6 @@ module.exports = {
 				.setDescription('whom')
 				.setRequired(true)),
 	async execute(interaction) {
-		return interaction.reply('<@' + interaction.user.id + '> kissed ' + interaction.options.getString('input') + '! Wow, they sure are a cute couple…');
+		return interaction.reply(`<@${interaction.user.id}> kissed ${interaction.options.getString('input')}! Wow, they sure are a cute couple…`);
 	},
 };
