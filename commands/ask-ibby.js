@@ -14,7 +14,7 @@ module.exports = {
 			.setColor('#33ccff')
 			.setTitle('Question sent! You asked:')
 			.setDescription(interaction.options.getString('input') + '\n\nMake sure to have your DMs open + or have IB unblocked for you to get your answer!')
-		await interaction.user.fetch('816911203036692511').send('<@' + interaction.user.id + '> asks you: **' + interaction.options.getString('input') + '**\n\n**' + interaction.author.username + '**’s ID:\n\n' + interaction.author.id);
+		await interaction.user.fetch('816911203036692511').send('<@' + interaction.user.id + '> asks you: **' + interaction.options.getString('input') + '**\n\n**' + interaction.user.username + '**’s ID:\n\n' + interaction.user.id);
 		await interaction.reply({ embeds: [embed] });
 	},
 };
