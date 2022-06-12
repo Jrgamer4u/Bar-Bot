@@ -9,7 +9,7 @@ module.exports = {
 		const embed = new MessageEmbed()
 			.setColor('#33ccff')
 			.setTitle('The Pirate List')
-			.setDescription('Pirate #1: Onigiri Animations / Pirates BFDI/BFB Characters\nwatch out for more pirates! <:yah:857776457987915786> ');
+			.setDescription('Pirate #1: Onigiri Animations / Pirates BFDI/BFB Characters\nwatch out for more pirates! <:yah:857776457987915786>');
 		return interaction.reply({ embeds: [embed] });
 	},
 };

@@ -7,6 +7,6 @@ module.exports = {
 		.setName('drawing-to-prof')
 		.setDescription('sends drawing to prof'),
 	async execute(interaction) {
-		await interaction.reply({ content: 'here prof <:yah:857776457987915786> ', files: [file] });
+		await interaction.reply({ content: 'here prof <:yah:857776457987915786>', files: [file] });
 	},
 };
