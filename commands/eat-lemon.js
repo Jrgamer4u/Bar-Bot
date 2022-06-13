@@ -22,6 +22,5 @@ module.exports = {
 		await interaction.followUp({ files: [file4] });
 		await wait(1000);
 		await interaction.followUp({ files: [file5] });
-		await wait(1000);
 	},
 };

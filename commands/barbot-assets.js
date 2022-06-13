@@ -10,9 +10,9 @@ module.exports = {
 		.setName('barbot-assets')
 		.setDescription('barbot’s ass'),
 	async execute(interaction) {
-		await interaction.reply({content: 'Old Asset', files: [file] });
-		await interaction.followUp({content: 'Asset (Without Levers)', files: [file2] });
-		await interaction.followUp({content: 'Asset (With Levers)', files: [file3] });
-		await interaction.followUp({content: 'Levers', files: [file4] });
+		await interaction.reply({ content: 'Old Asset', files: [file] });
+		await interaction.followUp({ content: 'Asset (Without Levers)', files: [file2] });
+		await interaction.followUp({ content: 'Asset (With Levers)', files: [file3] });
+		await interaction.followUp({ content: 'Levers', files: [file4] });
 	},
 };
