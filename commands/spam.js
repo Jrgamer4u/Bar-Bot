@@ -14,7 +14,7 @@ module.exports = {
 				.setRequired(true)),
 	async execute(interaction) {
 		await interaction.reply(interaction.options.getString('input'));
-		for (var count = 0; count < interaction.options.getString('amount'); count++) {
+		for (var count = 0; count < parseInt(interaction.options.getString('amount')); count++) {
 			await interaction.followUp(interaction.options.getString('input'));
 		}
 	},

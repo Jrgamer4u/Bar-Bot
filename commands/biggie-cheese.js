@@ -25,6 +25,6 @@ module.exports = {
 						},
 					]),
 			);
-		await interaction.reply({ content: "Biggie Cheese approaches you. He wants to give you his new brand of the Biggie Cheese Phone Case for FREE!\nDo you want them? **Type 'YES' to take, or 'NO' to decline.**", files: [file], components: [row] });
+		await interaction.reply({ content: "Biggie Cheese approaches you. He wants to give you his new brand of the Biggie Cheese Phone Case for FREE!\nDo you want them? **Choose 'YES' to take, or 'NO' to decline.**", files: [file], components: [row] });
 	},
 };
