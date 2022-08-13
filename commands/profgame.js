@@ -27,11 +27,15 @@ module.exports = {
 		.setDescription('it professor’s game'),
 	async execute(interaction) {
 		await interaction.reply('Images are not changed for the change from replying with text to responding with emoji, when it says when to type something, react it with the emoji in instead.');
-		await interaction.followUp({ files: [file] });
-		await interaction.followUp({ files: [file2] });
+		await interaction.reply({ files: [file] });
+		await interaction.reply({ files: [file2] });
 		await wait(2000);
-		await interaction.followUp({ files: [file3] });
-		await interaction.react('🇦').then(() => interaction.react('🇧').then(() => interaction.react('🇨').then(() => interaction.react('🇩'))));
+		await interaction.reply({ files: [file3], fetchReply: true });
+		const message = await interaction.fetchReply();
+		await message.react('🇦');
+		await message.react('🇧');
+		await message.react('🇨');
+		await message.react('🇩');
 
 		const filter = (reaction, user) => {
 			return ['🇦', '🇧', '🇨', '🇩', '🇪', '🇫', '🇬'].includes(reaction.emoji.name) && user.id === interaction.user.id;
@@ -42,35 +46,32 @@ module.exports = {
 				const reaction = collected.first();
 
 				if (reaction.emoji.name === '🇦') {
-					interaction.followUp({ files: [file4] });
-					interaction.followUp({ files: [file5] });
+					message.reply({ files: [file4] });
+					message.reply({ files: [file5] });
 				} else if (reaction.emoji.name === '🇧') {
-					interaction.followUp({ files: [file6] });
-					interaction.followUp({ files: [file7] });
+					message.reply({ files: [file6] });
+					message.reply({ files: [file7] });
 				} else if (reaction.emoji.name === '🇨') {
-					interaction.followUp({ files: [file8] });
-					interaction.followUp({ files: [file9] });
+					message.reply({ files: [file8] });
+					message.reply({ files: [file9] });
 				} else if (reaction.emoji.name === '🇩') {
-					interaction.followUp({ files: [file10] });
-					interaction.followUp({ files: [file11] });
+					message.reply({ files: [file10] });
+					message.reply({ files: [file11] });
 				} else if (reaction.emoji.name === '🇪') {
-					interaction.followUp({ files: [file12] });
-					interaction.followUp({ files: [file13] });
+					message.reply({ files: [file12] });
+					message.reply({ files: [file13] });
 				} else if (reaction.emoji.name === '🇫') {
-					interaction.followUp({ files: [file14] });
-					interaction.followUp({ files: [file15] });
+					message.reply({ files: [file14] });
+					message.reply({ files: [file15] });
 				} else {
-					interaction.followUp({ files: [file16] });
-					await wait(2000);
-					interaction.followUp({ files: [file17] });
-					await wait(2000);
-					interaction.followUp({ files: [file18] });
-					await wait(2000);
-					interaction.followUp({ files: [file19] });
+					message.reply({ files: [file16] });
+					message.reply({ files: [file17] });
+					message.reply({ files: [file18] });
+					message.reply({ files: [file19] });
 				}
 			})
 			.catch(collected => {
-				interaction.reply('Game Cancelled.');
+				message.reply('Game Cancelled.');
 			});
 	},
 };
