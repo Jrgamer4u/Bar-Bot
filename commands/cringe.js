@@ -10,10 +10,7 @@ module.exports = {
 		.setName('cringe')
 		.setDescription('look at cringe images'),
 	async execute(interaction) {
-		await interaction.reply({ files: [file] });
-		await interaction.followUp({ files: [file2] });
-		await interaction.followUp({ files: [file3] });
-		await interaction.followUp({ files: [file4] });
+		await interaction.reply({ files: [file, file2, file3, file4] });
 		await interaction.followUp('CRINGE');
 	},
 };
