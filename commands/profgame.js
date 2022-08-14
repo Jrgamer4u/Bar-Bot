@@ -26,25 +26,17 @@ module.exports = {
 		.setName('profgame')
 		.setDescription('it professor’s game'),
 	async execute(interaction) {
-		await interaction.reply('Images are not changed for the change from replying with text to responding with emoji, when it says when to type something, react it with the emoji in instead.');
-		await interaction.reply({ files: [file] });
-		await interaction.reply({ files: [file2] });
-		await wait(2000);
-		await interaction.reply({ files: [file3], fetchReply: true });
-		const message = await interaction.fetchReply();
-		await message.react('🇦');
-		await message.react('🇧');
-		await message.react('🇨');
-		await message.react('🇩');
+		const message = await interaction.reply({ content:"Images are not changed for the change from replying with text to responding with emoji, when it says when to type something, react it with the emoji below instead.", files: [file, file2, file3], fetchReply: true });
+		
+		await message.react('🇦').then(() => message.react('🇧')).then(() => message.react('🇨')).then(() => message.react('🇩'));
 
 		const filter = (reaction, user) => {
 			return ['🇦', '🇧', '🇨', '🇩', '🇪', '🇫', '🇬'].includes(reaction.emoji.name) && user.id === interaction.user.id;
 		};
 
-		return interaction.awaitReactions({ filter, max: 1, time: 60000, errors: ['time'] })
+		return message.awaitReactions({ filter, max: 1, time: 60000, errors: ['time'] })
 			.then(collected => {
 				const reaction = collected.first();
-
 				if (reaction.emoji.name === '🇦') {
 					message.reply({ files: [file4] });
 					message.reply({ files: [file5] });
