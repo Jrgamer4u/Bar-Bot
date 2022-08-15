@@ -1,7 +1,7 @@
 const keepAlive = require("./server.js");
 const { readdirSync } = require('fs');
 const { Client, Collection, Intents } = require('discord.js');
-const client = new Client({ intents: [Intents.FLAGS.GUILDS] });
+const client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES, Intents.FLAGS.GUILD_MESSAGE_REACTIONS], partials: ['MESSAGE', 'CHANNEL', 'REACTION'], });
 const Database = require("easy-json-database");
 const devMode = typeof __E_IS_DEV !== "undefined" && __E_IS_DEV;
 const db = new Database(`${devMode ? S4D_NATIVE_GET_PATH : "."}/database/db.json`)
