@@ -6,19 +6,23 @@ module.exports = {
 		.setName('game-test')
 		.setDescription('testing this'),
 	async execute(interaction) {
-		await interaction.reply('Reacting with letters');
-		const message = await interaction.fetchReply();
+		const message = await interaction.reply({ content: 'Reacting with letters', fetchReply: true });
 		try {
+			await message.reactions.removeAll()
+				.catch(error => console.error('Failed to clear reactions:', error));
 			await message.react(emojiCharacters.a);
 			await message.react(emojiCharacters.b);
 			await message.react(emojiCharacters.c);
 			await message.react(emojiCharacters.d);
+			await message.react(emojiCharacters.e);
+			await message.react(emojiCharacters.f);
+			await message.react(emojiCharacters.g);
 		} catch (error) {
 			console.error('One of the emojis failed to react:', error);
 		}
-
+		
 		const filter = (reaction, user) => {
-			return [emojiCharacters.a, emojiCharacters.b, emojiCharacters.c, emojiCharacters.d, emojiCharacters.e, emojiCharacters.f, emojiCharacters.g].includes(reaction.emoji.name) && user.id === interaction.user.id;
+			return [emojiCharacters.a, emojiCharacters.b, emojiCharacters.c, emojiCharacters.d, emojiCharacters.e, emojiCharacters.f, emojiCharacters.g].includes(reaction.emoji.name) && interaction.user.id;
 		};
 		
 		await message.awaitReactions({ filter, max: 1, time: 60000, errors: ['time'] })
