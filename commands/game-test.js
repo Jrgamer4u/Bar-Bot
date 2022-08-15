@@ -7,26 +7,20 @@ module.exports = {
 		.setDescription('testing this'),
 	async execute(interaction) {
 		const message = await interaction.reply({ content: 'Reacting with letters', fetchReply: true });
-		try {
-			await message.react(emojiCharacters.a);
-			await message.react(emojiCharacters.b);
-			await message.react(emojiCharacters.c);
-			await message.react(emojiCharacters.d);
-			await message.react(emojiCharacters.e);
-			await message.react(emojiCharacters.f);
-			await message.react(emojiCharacters.g);
-		} catch (error) {
-			console.error('One of the emojis failed to react:', error);
-		}
-		
+		message.react(emojiCharacters.a)
+			.then(() => message.react(emojiCharacters.b))
+			.then(() => message.react(emojiCharacters.c))
+			.then(() => message.react(emojiCharacters.d))
+			.catch(error => console.error('One of the emojis failed to react:', error));
+
 		const filter = (reaction, user) => {
-			return [emojiCharacters.a, emojiCharacters.b, emojiCharacters.c, emojiCharacters.d, emojiCharacters.e, emojiCharacters.f, emojiCharacters.g].includes(reaction.emoji.name) && interaction.user.id;
+			return [emojiCharacters.a, emojiCharacters.b, emojiCharacters.c, emojiCharacters.d, emojiCharacters.e, emojiCharacters.f, emojiCharacters.g].includes(reaction.emoji.name) && user.id === interaction.user.id;
 		};
-		
+
 		message.awaitReactions({ filter, max: 1, time: 60000, errors: ['time'] })
 			.then(collected => {
 				const reaction = collected.first();
-		
+
 				if (reaction.emoji.name === emojiCharacters.a) {
 					message.reply('You reacted with A.');
 				} else if (reaction.emoji.name === emojiCharacters.b) {
