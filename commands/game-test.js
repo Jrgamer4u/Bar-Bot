@@ -8,8 +8,6 @@ module.exports = {
 	async execute(interaction) {
 		const message = await interaction.reply({ content: 'Reacting with letters', fetchReply: true });
 		try {
-			await message.reactions.removeAll()
-				.catch(error => console.error('Failed to clear reactions:', error));
 			await message.react(emojiCharacters.a);
 			await message.react(emojiCharacters.b);
 			await message.react(emojiCharacters.c);
@@ -25,7 +23,7 @@ module.exports = {
 			return [emojiCharacters.a, emojiCharacters.b, emojiCharacters.c, emojiCharacters.d, emojiCharacters.e, emojiCharacters.f, emojiCharacters.g].includes(reaction.emoji.name) && interaction.user.id;
 		};
 		
-		await message.awaitReactions({ filter, max: 1, time: 60000, errors: ['time'] })
+		message.awaitReactions({ filter, max: 1, time: 60000, errors: ['time'] })
 			.then(collected => {
 				const reaction = collected.first();
 		
