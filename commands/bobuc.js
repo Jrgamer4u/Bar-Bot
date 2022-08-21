@@ -1,5 +1,4 @@
-const { SlashCommandBuilder } = require('@discordjs/builders');
-const { MessageEmbed } = require('discord.js');
+const { SlashCommandBuilder, EmbedBuilder } = require('discord.js');
 
 module.exports = {
 	data: new SlashCommandBuilder()
@@ -10,7 +9,7 @@ module.exports = {
 				.setDescription('How much bobuc do you want?')
 				.setRequired(true)),
 	async execute(interaction) {
-		const embed = new MessageEmbed()
+		const embed = new EmbedBuilder()
 			.setColor('#33ccff')
 			.setTitle('<:yah:857776457987915786>  Bobux Recieved:')
 			.setDescription(interaction.options.getString('input'));

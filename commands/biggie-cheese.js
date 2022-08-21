@@ -1,15 +1,14 @@
-const { SlashCommandBuilder } = require('@discordjs/builders');
-const { MessageActionRow, MessageSelectMenu, MessageAttachment } = require('discord.js');
-const file = new MessageAttachment('files/biggie-cheese.png');
+const { SlashCommandBuilder, ActionRowBuilder, SelectMenuBuilder, AttachmentBuilder } = require('discord.js');
+const file = new AttachmentBuilder('files/biggie-cheese.png');
 
 module.exports = {
 	data: new SlashCommandBuilder()
 		.setName('biggie-cheese')
 		.setDescription('Tells you  textbox'),
 	async execute(interaction) {
-		const row = new MessageActionRow()
+		const row = new ActionRowBuilder()
 			.addComponents(
-				new MessageSelectMenu()
+				new SelectMenuBuilder()
 					.setCustomId('select')
 					.setPlaceholder('Nothing selected')
 					.addOptions([

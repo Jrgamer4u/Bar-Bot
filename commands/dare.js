@@ -1,4 +1,4 @@
-const { SlashCommandBuilder } = require('@discordjs/builders');
+const { SlashCommandBuilder } = require('discord.js');
 
 module.exports = {
 	data: new SlashCommandBuilder()
@@ -9,7 +9,7 @@ module.exports = {
 				.setDescription('your dare')
 				.setRequired(true)),
 	async execute(interaction) {
-		const embed = new MessageEmbed()
+		const embed = new EmbedBuilder()
 			.setColor('#33ccff')
 			.setTitle(`The person 3 messages above has been dared to:`)
 			.setDescription(`${interaction.options.getString('input')} the person below.`);

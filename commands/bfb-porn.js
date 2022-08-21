@@ -1,8 +1,7 @@
-const { SlashCommandBuilder } = require('@discordjs/builders');
-const { MessageAttachment } = require('discord.js');
+const { SlashCommandBuilder, AttachmentBuilder } = require('discord.js');
 const wait = require('node:timers/promises').setTimeout;
-const file = new MessageAttachment('files/bfb-porn.jpg');
-const file2 = new MessageAttachment('files/bfb-porn2.png');
+const file = new AttachmentBuilder('files/bfb-porn.jpg');
+const file2 = new AttachmentBuilder('files/bfb-porn2.png');
 
 module.exports = {
 	data: new SlashCommandBuilder()

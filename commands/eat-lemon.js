@@ -1,11 +1,10 @@
-const { SlashCommandBuilder } = require('@discordjs/builders');
-const { MessageAttachment } = require('discord.js');
+const { SlashCommandBuilder, AttachmentBuilder } = require('discord.js');
 const wait = require('node:timers/promises').setTimeout;
-const file = new MessageAttachment('files/lemon.png');
-const file2 = new MessageAttachment('files/lemon2.png');
-const file3 = new MessageAttachment('files/lemon3.png');
-const file4 = new MessageAttachment('files/lemon4.png');
-const file5 = new MessageAttachment('files/lemon5.png');
+const file = new AttachmentBuilder('files/lemon.png');
+const file2 = new AttachmentBuilder('files/lemon2.png');
+const file3 = new AttachmentBuilder('files/lemon3.png');
+const file4 = new AttachmentBuilder('files/lemon4.png');
+const file5 = new AttachmentBuilder('files/lemon5.png');
 
 module.exports = {
 	data: new SlashCommandBuilder()
