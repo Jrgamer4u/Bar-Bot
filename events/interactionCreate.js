@@ -1,6 +1,9 @@
 const fs = require('node:fs');
 const path = require('node:path');
 const { Client, Collection, InteractionType, GatewayIntentBits } = require('discord.js');
+const Database = require("easy-json-database");
+const devMode = typeof __E_IS_DEV !== "undefined" && __E_IS_DEV;
+const db = new Database(`${devMode ? S4D_NATIVE_GET_PATH : "."}/db.json`),
 
 const client = new Client({ intents: [GatewayIntentBits.Guilds] });
 
