@@ -2,17 +2,17 @@
 
 ## Supported Versions (BarBot)
 
-| Version | Supported          |
-| ------- | ------------------ |
-| 4.0.0   | :white_check_mark: |
-| < 4.0   | :x:                |
+| Version | Supported |
+| - | - |
+| 4.1.0 | :white_check_mark: |
+| 4.0.0 | :x: |
 
 ## Supported Versions (Recovery Centre)
 
-| Version | Supported          |
-| ------- | ------------------ |
-| 2.0.0   | :white_check_mark: |
-| < 2.0   | :x:                |
+| Version | Supported |
+| - | - |
+| 2.1.0 | :white_check_mark: |
+| 2.0.0 | :x: |
 
 ## Reporting a Vulnerability
 
