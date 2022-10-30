@@ -4,7 +4,7 @@ module.exports = {
 	name: 'interactionCreate',
 	execute(interaction) {
 		if (interaction.type === InteractionType.ApplicationCommand){
-			const command = client.commands.get(interaction.commandName);
+			const command = interaction.client.commands.get(interaction.commandName);
 
 			if (!command) return;
 
